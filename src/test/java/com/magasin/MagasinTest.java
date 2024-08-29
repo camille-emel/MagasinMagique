@@ -10,7 +10,7 @@ class MagasinTest {
 
     @Test
     void comteday8() {
-        Item[] items = new Item[] { new Item("Comté", 8, 10) };
+        Item[] items = new Item[] { new Item("Comté", 54, 10) };
         Magasin app = new Magasin(items);
         app.updateQuality();
         assertEquals(11, app.items[0].quality);
