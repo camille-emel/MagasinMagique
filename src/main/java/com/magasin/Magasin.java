@@ -40,6 +40,18 @@ class Magasin {
             else if (items[i].name.equals("Kryptonite")) {
                 items[i].quality = 80;
             }
+            //Pouvoir magique
+            else if (items[i].name.equals("Pouvoirs magiques")) {
+                if (items[i].sellIn > 0 ) {
+                    items[i].quality -= 2;
+                }
+                else if (items[i].sellIn <= 0 ) {
+                    items[i].quality -= 4;
+                }
+                if (items[i].quality < 0) {
+                    items[i].quality = 0;
+                }
+            }
             //All others products
             else {
                 if (items[i].sellIn > 0 ) {
@@ -48,12 +60,13 @@ class Magasin {
                 else if (items[i].sellIn <= 0 ) {
                     items[i].quality -= 2;
                 }
-                if (items[i].quality < 0) {
-                    items[i].quality = 0;
-                }
             }
-            if (items[i].quality > 50) {
+            //Secure quality
+            if (items[i].quality > 50 && !items[i].name.equals("Kryptonite")) {
                 items[i].quality = 50;
+            }
+            if (items[i].quality < 0) {
+                items[i].quality = 0;
             }
         }
     }

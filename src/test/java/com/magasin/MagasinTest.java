@@ -1,6 +1,8 @@
 package com.magasin;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -89,5 +91,19 @@ class MagasinTest {
         Magasin app = new Magasin(items);
         app.updateQuality();
         assertEquals(8, app.items[0].quality);
+    }
+    @Test
+    void pouvoirmagic10() {
+        Item[] items = new Item[] { new Item("Pouvoirs magiques", 10, 10) };
+        Magasin app = new Magasin(items);
+        app.updateQuality();
+        assertEquals(8, app.items[0].quality);
+    }
+    @Test
+    void pouvoirmagic0() {
+        Item[] items = new Item[] { new Item("Pouvoirs magiques", 0, 10) };
+        Magasin app = new Magasin(items);
+        app.updateQuality();
+        assertEquals(6, app.items[0].quality);
     }
 }
