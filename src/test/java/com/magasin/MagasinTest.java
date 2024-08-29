@@ -28,6 +28,13 @@ class MagasinTest {
         assertEquals(12, app.items[0].quality);
     }
     @Test
+    void comteday0q50() {
+        Item[] items = new Item[] { new Item("Comté",0 , 50) };
+        Magasin app = new Magasin(items);
+        app.updateQuality();
+        assertEquals(50, app.items[0].quality);
+    }
+    @Test
     void kryptoniteday10() {
         Item[] items = new Item[] { new Item("Kryptonite", 10, 80) };
         Magasin app = new Magasin(items);
