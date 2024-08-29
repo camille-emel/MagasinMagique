@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class MagasinTest {
 
     @Test
-    void comteday10() {
+    void comteday8() {
         Item[] items = new Item[] { new Item("Comté", 8, 10) };
         Magasin app = new Magasin(items);
         app.updateQuality();
